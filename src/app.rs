@@ -75,9 +75,7 @@ impl Application for App {
                 self.img_idx = 0;
                 self.img_src_paths = paths;
             }
-            Message::SetTargetDir0(dir) => {
-                self.dest_dirs[0] = Some(dir);
-            }
+            Message::SetTargetDir0(dir) => self.dest_dirs[0] = Some(dir),
             Message::SetTargetDir1(dir) => self.dest_dirs[1] = Some(dir),
             Message::ImgNext => {
                 if let Some(path) = self.img_src_paths.get(self.img_idx) {
